@@ -7,7 +7,6 @@
 [![RAG](https://img.shields.io/badge/RAG-Multi--Stage-orange?style=for-the-badge)](https://arxiv.org/)
 [![QLoRA](https://img.shields.io/badge/Fine--Tuning-QLoRA-purple?style=for-the-badge)](https://arxiv.org/abs/2305.14314)
 [![HumanEval](https://img.shields.io/badge/HumanEval-93.9%25-brightgreen?style=for-the-badge)](https://github.com/openai/human-eval)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 **A production-grade, multi-agent pipeline for automated code generation, testing, review, and self-repair — powered by RAG, Chain-of-Thought prompting, and parameter-efficient fine-tuning.**
 
