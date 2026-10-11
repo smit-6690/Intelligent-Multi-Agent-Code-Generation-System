@@ -22,8 +22,6 @@ The archived Phase 2 summary records:
 - 32 repaired
 - 0 failed after the recorded repair workflow
 
-Separate analysis reports contain quality scores and strategy comparisons. They should not be labeled as HumanEval `pass@1` unless a benchmark-specific pass@1 calculation is run and saved.
-
 ## Quick start
 
 ```bash
@@ -130,6 +128,4 @@ tests/
 
 The notebooks represent the original GPU experiments. The package is the reproducible integration layer built around those artifacts. Full model inference requires the base model, compatible CUDA/PyTorch dependencies, the saved adapter, and the RAG files. The mock backend is provided for CI and local structural validation without a GPU.
 
-## License and responsible use
 
-Generated code must be reviewed before execution. Do not run untrusted generated programs outside an isolated environment. Model and dataset licenses remain applicable to their respective artifacts.
