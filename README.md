@@ -1,243 +1,135 @@
-<div align="center">
+# Intelligent Multi-Agent Code Generation System
 
-# 🤖 Intelligent Multi-Agent Code Generation System
+A reproducible Python pipeline for retrieval-augmented code generation, automated validation, review, and repair. The project makes the stored notebook experiments usable through a small package and command-line interface.
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![LLM](https://img.shields.io/badge/LLM-DeepSeekCoder--6.7B-green?style=for-the-badge)](https://github.com/deepseek-ai/DeepSeek-Coder)
-[![RAG](https://img.shields.io/badge/RAG-Multi--Stage-orange?style=for-the-badge)](https://arxiv.org/)
-[![QLoRA](https://img.shields.io/badge/Fine--Tuning-QLoRA-purple?style=for-the-badge)](https://arxiv.org/abs/2305.14314)
-[![HumanEval](https://img.shields.io/badge/HumanEval-93.9%25-brightgreen?style=for-the-badge)](https://github.com/openai/human-eval)
+## What is included
 
-**A production-grade, multi-agent pipeline for automated code generation, testing, review, and self-repair — powered by RAG, Chain-of-Thought prompting, and parameter-efficient fine-tuning.**
+- Five logical stages: specification analysis, generation, testing, review, and repair.
+- Optional FAISS retrieval over the saved CodeSearchNet Python index.
+- Optional Hugging Face Transformers + PEFT adapter backend.
+- Dependency-light mock mode for local smoke tests.
+- Stored experiment summaries under `artifacts/results/`.
+- Original notebooks retained for experiment provenance.
 
-[Overview](#-overview) • [Architecture](#-architecture) • [Results](#-results) • [Installation](#-installation) • [Usage](#-usage) • [Fine-Tuning](#-fine-tuning) • [Contributing](#-contributing)
+## Verified stored results
 
-</div>
+The archived Phase 2 summary records:
 
----
+- 100,000 indexed RAG samples
+- 127,264 generated chunks
+- 100 evaluated samples
+- 68 passed on the initial evaluation
+- 32 repaired
+- 0 failed after the recorded repair workflow
 
-## 📌 Overview
+Separate analysis reports contain quality scores and strategy comparisons. They should not be labeled as HumanEval `pass@1` unless a benchmark-specific pass@1 calculation is run and saved.
 
-This project implements a **5-agent collaborative architecture** for intelligent code generation, designed to tackle the limitations of single-pass LLM code synthesis. Rather than relying on a single model call, the system routes each programming task through a structured pipeline of specialized agents — each responsible for a distinct stage of the software development lifecycle.
-
-The system integrates:
-- **Retrieval-Augmented Generation (RAG)** over 127K+ real-world code samples
-- **Chain-of-Thought (CoT) prompting** for structured reasoning
-- **Multi-stage automated repair** for self-healing code pipelines
-- **Parameter-efficient QLoRA fine-tuning** on DeepSeekCoder-6.7B
-
-> **Key Result:** Improved HumanEval pass@1 from **68% → 93.9%** (+25.9 pp), while reducing GPU memory usage by **74%** (13.7GB → 3.6GB) through QLoRA fine-tuning on a single RTX 4090.
-
----
-
-## 🏗 Architecture
-
-The pipeline consists of **5 specialized agents** operating in sequence, with feedback loops enabling iterative self-repair:
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                  MULTI-AGENT CODE GENERATION PIPELINE               │
-│                                                                     │
-│   ┌──────────────┐    ┌───────────────┐    ┌──────────────────┐    │
-│   │ 1. SPEC      │───▶│ 2. DEVELOPER  │───▶│ 3. TESTER        │    │
-│   │  ANALYZER    │    │               │    │                  │    │
-│   │              │    │  RAG + CoT    │    │  Auto Test Gen   │    │
-│   │ Parses &     │    │  Code Gen     │    │  & Execution     │    │
-│   │ Structures   │    │               │    │                  │    │
-│   │ Requirements │    └───────────────┘    └────────┬─────────┘    │
-│   └──────────────┘                                  │              │
-│                                                     ▼              │
-│   ┌──────────────┐    ┌───────────────┐    ┌──────────────────┐    │
-│   │ 5. REPAIR    │◀───│ 4. REVIEWER   │◀───│   Test Results   │    │
-│   │   AGENT      │    │               │    │                  │    │
-│   │              │    │  Quality &    │    │  Pass / Fail     │    │
-│   │  Auto-patch  │    │  Style Review │    │  Analysis        │    │
-│   │  & Re-test   │    │               │    │                  │    │
-│   └──────┬───────┘    └───────────────┘    └──────────────────┘    │
-│          │                                                          │
-│          └──────── Retry Loop (max 3 attempts) ──────────────────▶ │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
-
-### Agent Responsibilities
-
-| Agent | Role | Key Technology |
-|---|---|---|
-| **SpecAnalyzer** | Parses natural language specs into structured task representations | NLP, AST parsing |
-| **Developer** | Generates code using RAG-augmented CoT prompting | DeepSeekCoder-6.7B, FAISS RAG |
-| **Tester** | Auto-generates and executes test cases | Pytest, dynamic test synthesis |
-| **Reviewer** | Evaluates output quality, style, and correctness | Static analysis, rubric scoring |
-| **Repair** | Patches failing code and re-routes through pipeline | Iterative prompting, diff patching |
-
----
-
-## 📊 Results
-
-### HumanEval Benchmark Performance
-
-| Configuration | pass@1 | Improvement |
-|---|---|---|
-| Baseline (no RAG, no fine-tuning) | 68.0% | — |
-| + Multi-stage RAG | 79.3% | +11.3 pp |
-| + Chain-of-Thought Prompting | 86.1% | +18.1 pp |
-| + Automated Repair Pipeline | 91.2% | +23.2 pp |
-| **+ QLoRA Fine-Tuning (final)** | **93.9%** | **+25.9 pp** |
-
-### Resource Efficiency (QLoRA Fine-Tuning)
-
-| Metric | Before | After | Improvement |
-|---|---|---|---|
-| GPU Memory Usage | 13.7 GB | 3.6 GB | **↓ 74%** |
-| First-Try Correctness | ~45% | 75% | **↑ +30 pp** |
-| Average Quality Score | ~65 | 90+ | **↑ +38%** |
-| Retrieval Utilization | — | 98% | — |
-| Unrecoverable Failures | baseline | −30% | **↓ 30%** |
-
-> All benchmarks run on a single **NVIDIA RTX 4090** (24GB VRAM). QLoRA fine-tuning used MBPP + CodeContests datasets.
-
----
-
-## 🛠 Tech Stack
-
-- **Model:** DeepSeekCoder-6.7B-Instruct
-- **Fine-Tuning:** QLoRA (4-bit quantization via `bitsandbytes`)
-- **RAG:** FAISS vector store, sentence-transformers embeddings
-- **Datasets:** HumanEval, MBPP, CodeContests (127K+ samples)
-- **Orchestration:** LangChain / custom agent loop
-- **Testing:** Pytest, subprocess execution sandbox
-- **Training:** HuggingFace `transformers`, `peft`, `trl`
-
----
-
-## ⚙️ Installation
-
-### Prerequisites
-- Python 3.10+
-- CUDA 11.8+ (recommended: RTX 3090 / 4090 with 24GB VRAM)
-- Git
-
-### Setup
+## Quick start
 
 ```bash
-# Clone the repository
-git clone https://github.com/smit-6690/Intelligent-Multi-Agent-Code-Generation-System.git
-cd Intelligent-Multi-Agent-Code-Generation-System
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[dev]"
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment variables
 cp .env.example .env
-# Edit .env with your HuggingFace token and config
+PYTHONPATH=src python -m magent_codegen.cli \
+  "Return all prime numbers up to n." --json
 ```
 
-### Environment Variables
+Validate the stored result:
+
+```bash
+PYTHONPATH=src python scripts/validate_results.py
+```
+
+Evaluate a JSON or JSONL task set:
+
+```bash
+PYTHONPATH=src python -m magent_codegen.evaluate_cli \
+  --input path/to/tasks.json \
+  --output artifacts/results/local_evaluation.json
+```
+
+The generated report uses the explicit metric name `pipeline_smoke_pass_rate`. It is not a substitute for HumanEval `pass@1`; a benchmark harness must execute each task's official tests before reporting that metric.
+
+## Run the local API
+
+Start the dependency-light API in mock mode:
+
+```bash
+PYTHONPATH=src MODEL_BACKEND=mock python -m magent_codegen.service
+```
+
+Check health:
+
+```bash
+curl http://127.0.0.1:8080/health
+```
+
+Generate code:
+
+```bash
+curl -X POST http://127.0.0.1:8080/generate \
+  -H 'Content-Type: application/json' \
+  -d '{"specification":"Return all prime numbers up to n."}'
+```
+
+Run tests after installing the development extra:
+
+```bash
+pytest
+```
+
+## Using the saved model and RAG artifacts
+
+The Drive archive contains the FAISS index, JSONL documents, PEFT adapter, checkpoints, and formatted datasets. These large files are intentionally kept outside Git. After downloading them locally, set:
 
 ```env
-HUGGINGFACE_TOKEN=your_hf_token_here
-MODEL_NAME=deepseek-ai/deepseek-coder-6.7b-instruct
-FAISS_INDEX_PATH=./data/faiss_index
-MAX_REPAIR_ATTEMPTS=3
+MODEL_BACKEND=transformers
+BASE_MODEL=mistralai/Mistral-7B-v0.1
+ADAPTER_PATH=/absolute/path/to/adapter-directory
+RAG_INDEX_PATH=/absolute/path/to/codesearchnet_python.faiss
+RAG_DOCUMENTS_PATH=/absolute/path/to/documents.jsonl
 ```
 
----
-
-## 🚀 Usage
-
-### Run the Full Pipeline
-
-```python
-from agents import MultiAgentPipeline
-
-pipeline = MultiAgentPipeline(
-    model_path="deepseek-ai/deepseek-coder-6.7b-instruct",
-    rag_index="./data/faiss_index",
-    max_repair_attempts=3
-)
-
-# Generate code from a natural language specification
-result = pipeline.run(
-    spec="Write a function that finds all prime numbers up to n using the Sieve of Eratosthenes."
-)
-
-print(result.code)          # Generated + repaired code
-print(result.test_results)  # Test pass/fail summary
-print(result.quality_score) # Reviewer score (0-100)
-```
-
-### Evaluate on HumanEval
+Install the optional dependencies:
 
 ```bash
-python evaluate.py \
-  --benchmark humaneval \
-  --model_path ./checkpoints/qlora-finetuned \
-  --use_rag True \
-  --use_repair True \
-  --output_path ./results/humaneval_results.json
+python -m pip install -e ".[ml]"
 ```
 
-### Run Individual Agents
+Then run the same CLI command. The backend loads the base model lazily and applies the PEFT adapter when `ADAPTER_PATH` is configured.
 
-```python
-from agents import SpecAnalyzer, Developer, Tester, Reviewer, RepairAgent
+The adapter stored in the archive targets `deepseek-ai/deepseek-coder-6.7b-instruct`. The Phase 2 summary is a separate Mistral-based experiment, so those model results must not be combined without recording the model and configuration for each run.
 
-# Use any agent independently
-analyzer = SpecAnalyzer()
-structured_spec = analyzer.parse("Sort a list of integers in ascending order.")
+## Repository layout
 
-developer = Developer(rag_enabled=True)
-code = developer.generate(structured_spec)
+```text
+src/magent_codegen/
+  agents.py       # generation, testing, review, and repair stages
+  backend.py      # mock and Transformers/PEFT backends
+  config.py       # environment-backed settings
+  pipeline.py     # orchestration entry point
+  retrieval.py    # optional FAISS retriever
+  types.py        # result models
+  cli.py          # command-line interface
+  evaluate_cli.py # evaluation command
+  service.py      # standard-library HTTP API
+artifacts/
+  results/        # stored JSON summaries
+  rag/            # small RAG manifest; large files stay local
+scripts/
+  validate_results.py
+tests/
+01_project-testing (1).ipynb
+02_phase-2_pipeline_RTX4090 (1).ipynb
+03_phase-3_INDUSTRY_STANDARD.ipynb
 ```
 
----
+## Reproducibility notes
 
-## 🎯 Fine-Tuning
+The notebooks represent the original GPU experiments. The package is the reproducible integration layer built around those artifacts. Full model inference requires the base model, compatible CUDA/PyTorch dependencies, the saved adapter, and the RAG files. The mock backend is provided for CI and local structural validation without a GPU.
 
-To reproduce the QLoRA fine-tuning results:
+## License and responsible use
 
-```bash
-# Prepare training data (MBPP + CodeContests)
-python scripts/prepare_dataset.py \
-  --datasets mbpp codecontests \
-  --output_path ./data/train
-
-# Run QLoRA fine-tuning
-python train.py \
-  --model_name deepseek-ai/deepseek-coder-6.7b-instruct \
-  --dataset_path ./data/train \
-  --output_dir ./checkpoints/qlora-finetuned \
-  --lora_r 16 \
-  --lora_alpha 32 \
-  --bits 4 \
-  --num_epochs 3 \
-  --batch_size 4 \
-  --gradient_accumulation_steps 4
-```
-
-**Training configuration (single RTX 4090):**
-
-| Parameter | Value |
-|---|---|
-| LoRA Rank (r) | 16 |
-| LoRA Alpha | 32 |
-| Quantization | 4-bit (NF4) |
-| Batch Size | 4 |
-| Gradient Accumulation | 4 steps |
-| Learning Rate | 2e-4 |
-| Epochs | 3 |
-| Peak GPU Memory | **3.6 GB** |
-
-
-
-<div align="center">
-
-**Built by [Smit Ardeshana](https://www.linkedin.com/in/smit-ardeshana-956512220/) · [GitHub](https://github.com/smit-6690)**
-
-*If this project helped you, please consider giving it a ⭐*
-
-</div>
+Generated code must be reviewed before execution. Do not run untrusted generated programs outside an isolated environment. Model and dataset licenses remain applicable to their respective artifacts.

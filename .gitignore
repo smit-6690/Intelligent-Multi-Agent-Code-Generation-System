@@ -1,0 +1,12 @@
+.env
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+artifacts/rag/*.faiss
+artifacts/rag/*.jsonl
+artifacts/adapters/*
+artifacts/checkpoints/*
+models/
+venv/
+.venv/

@@ -1,0 +1,12 @@
+python-dotenv>=1.0
+pytest>=8.0
+
+# Optional GPU/RAG dependencies:
+# torch>=2.1
+# transformers>=4.40
+# peft>=0.10
+# accelerate>=0.27
+# bitsandbytes>=0.43
+# sentence-transformers>=2.6
+# faiss-cpu>=1.8
+# datasets>=2.18

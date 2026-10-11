@@ -1,0 +1,24 @@
+{
+  "rag": {
+    "index": {
+      "drive_file_id": "1LhcXe0K491uOI18M1HbgK8hSy0uIWolu",
+      "local_path": "artifacts/rag/codesearchnet_python.faiss",
+      "expected_bytes": 195477549
+    },
+    "documents": {
+      "drive_file_id": "13TuNRj0LuDM39wbTY3Jh59CQdxR7ESzj",
+      "local_path": "artifacts/rag/documents.jsonl",
+      "expected_lines": 127264
+    },
+    "manifest": {
+      "drive_file_id": "1fbtMgddaQLI50OGyMmDjrh3RylWtUfuc",
+      "local_path": "artifacts/rag/manifest.json"
+    }
+  },
+  "adapter": {
+    "model_file_drive_id": "17eYfaZ3jGI2zcdoSOAIvOC7jVk0NJ-Ci",
+    "base_model": "deepseek-ai/deepseek-coder-6.7b-instruct",
+    "local_path": "artifacts/adapters/checkpoint-51/adapter_model.safetensors",
+    "expected_bytes": 134252336
+  }
+}

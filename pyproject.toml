@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intelligent-multi-agent-code-generation"
+version = "0.1.0"
+description = "A reproducible retrieval-augmented code generation and repair pipeline."
+requires-python = ">=3.10"
+dependencies = [
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+ml = [
+  "torch>=2.1",
+  "transformers>=4.40",
+  "peft>=0.10",
+  "accelerate>=0.27",
+  "bitsandbytes>=0.43; platform_system == 'Linux'",
+  "sentence-transformers>=2.6",
+  "faiss-cpu>=1.8",
+  "datasets>=2.18",
+]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+magent = "magent_codegen.cli:main"
+magent-evaluate = "magent_codegen.evaluate_cli:main"
+magent-serve = "magent_codegen.service:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

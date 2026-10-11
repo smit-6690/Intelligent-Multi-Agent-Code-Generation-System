@@ -1,0 +1,10 @@
+{
+  "source": "CodeSearchNet (sentence-transformers mirror)",
+  "language": "python",
+  "samples_indexed": 100000,
+  "total_chunks": 127264,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "chunk_max_len": 1024,
+  "index_type": "FAISS IndexFlatIP"
+}

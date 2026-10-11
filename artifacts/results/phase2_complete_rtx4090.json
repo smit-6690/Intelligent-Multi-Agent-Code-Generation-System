@@ -1,0 +1,916 @@
+{
+  "timestamp": "2025-11-26T02:46:13.893085",
+  "phase": "Phase 2 Complete",
+  "hardware": "RTX 4090",
+  "rag_samples": 100000,
+  "rag_chunks": 127264,
+  "model": "Mistral-7B-v0.1",
+  "samples": 100,
+  "passed": 68,
+  "repaired": 32,
+  "failed": 0,
+  "avg_quality_score": 89.15,
+  "avg_generation_time": 8.603824541568756,
+  "results": [
+    {
+      "task_id": "HumanEval/0",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 12.13167691230774,
+      "final_code_length": 529
+    },
+    {
+      "task_id": "HumanEval/1",
+      "status": "repaired",
+      "quality_score": 100,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.385043144226074,
+      "final_code_length": 1129
+    },
+    {
+      "task_id": "HumanEval/2",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 2.4911305904388428,
+      "final_code_length": 360
+    },
+    {
+      "task_id": "HumanEval/3",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 3.7125706672668457,
+      "final_code_length": 590
+    },
+    {
+      "task_id": "HumanEval/4",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 4.715710163116455,
+      "final_code_length": 647
+    },
+    {
+      "task_id": "HumanEval/5",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.43615460395813,
+      "final_code_length": 454
+    },
+    {
+      "task_id": "HumanEval/6",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.46900987625122,
+      "final_code_length": 697
+    },
+    {
+      "task_id": "HumanEval/7",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.559080600738525,
+      "final_code_length": 493
+    },
+    {
+      "task_id": "HumanEval/8",
+      "status": "repaired",
+      "quality_score": 85,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 2.0813493728637695,
+      "final_code_length": 257
+    },
+    {
+      "task_id": "HumanEval/9",
+      "status": "repaired",
+      "quality_score": 85,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 2.5043067932128906,
+      "final_code_length": 271
+    },
+    {
+      "task_id": "HumanEval/10",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 7.787380695343018,
+      "final_code_length": 1054
+    },
+    {
+      "task_id": "HumanEval/11",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 5.026529550552368,
+      "final_code_length": 590
+    },
+    {
+      "task_id": "HumanEval/12",
+      "status": "repaired",
+      "quality_score": 95,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 4.739254713058472,
+      "final_code_length": 1038
+    },
+    {
+      "task_id": "HumanEval/13",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.492414474487305,
+      "final_code_length": 514
+    },
+    {
+      "task_id": "HumanEval/14",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.557073831558228,
+      "final_code_length": 302
+    },
+    {
+      "task_id": "HumanEval/15",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.56682300567627,
+      "final_code_length": 671
+    },
+    {
+      "task_id": "HumanEval/16",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 3.923499822616577,
+      "final_code_length": 592
+    },
+    {
+      "task_id": "HumanEval/17",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.394325256347656,
+      "final_code_length": 636
+    },
+    {
+      "task_id": "HumanEval/18",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 3.5266616344451904,
+      "final_code_length": 454
+    },
+    {
+      "task_id": "HumanEval/19",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.383699893951416,
+      "final_code_length": 130
+    },
+    {
+      "task_id": "HumanEval/20",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 7.079038619995117,
+      "final_code_length": 847
+    },
+    {
+      "task_id": "HumanEval/21",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 10.999766111373901,
+      "final_code_length": 514
+    },
+    {
+      "task_id": "HumanEval/22",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.310285568237305,
+      "final_code_length": 409
+    },
+    {
+      "task_id": "HumanEval/23",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 2.668989419937134,
+      "final_code_length": 394
+    },
+    {
+      "task_id": "HumanEval/24",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 2.846811532974243,
+      "final_code_length": 345
+    },
+    {
+      "task_id": "HumanEval/25",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.427447080612183,
+      "final_code_length": 660
+    },
+    {
+      "task_id": "HumanEval/26",
+      "status": "repaired",
+      "quality_score": 90,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 4.840365648269653,
+      "final_code_length": 537
+    },
+    {
+      "task_id": "HumanEval/27",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 2.7233364582061768,
+      "final_code_length": 401
+    },
+    {
+      "task_id": "HumanEval/28",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.456868171691895,
+      "final_code_length": 364
+    },
+    {
+      "task_id": "HumanEval/29",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.524006843566895,
+      "final_code_length": 444
+    },
+    {
+      "task_id": "HumanEval/30",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.58222770690918,
+      "final_code_length": 504
+    },
+    {
+      "task_id": "HumanEval/31",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 5.83137321472168,
+      "final_code_length": 640
+    },
+    {
+      "task_id": "HumanEval/32",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 10.054748058319092,
+      "final_code_length": 1041
+    },
+    {
+      "task_id": "HumanEval/33",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.423208713531494,
+      "final_code_length": 580
+    },
+    {
+      "task_id": "HumanEval/34",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.287713050842285,
+      "final_code_length": 241
+    },
+    {
+      "task_id": "HumanEval/35",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.701085805892944,
+      "final_code_length": 249
+    },
+    {
+      "task_id": "HumanEval/36",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.49410080909729,
+      "final_code_length": 378
+    },
+    {
+      "task_id": "HumanEval/37",
+      "status": "repaired",
+      "quality_score": 85,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 4.259764909744263,
+      "final_code_length": 1040
+    },
+    {
+      "task_id": "HumanEval/38",
+      "status": "passed",
+      "quality_score": 65,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.659554243087769,
+      "final_code_length": 1
+    },
+    {
+      "task_id": "HumanEval/39",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.372432231903076,
+      "final_code_length": 523
+    },
+    {
+      "task_id": "HumanEval/40",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 6.674800872802734,
+      "final_code_length": 713
+    },
+    {
+      "task_id": "HumanEval/41",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 10.639903545379639,
+      "final_code_length": 1591
+    },
+    {
+      "task_id": "HumanEval/42",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.384920597076416,
+      "final_code_length": 1564
+    },
+    {
+      "task_id": "HumanEval/43",
+      "status": "repaired",
+      "quality_score": 70,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.50262451171875,
+      "final_code_length": 514
+    },
+    {
+      "task_id": "HumanEval/44",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.398666143417358,
+      "final_code_length": 1479
+    },
+    {
+      "task_id": "HumanEval/45",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.45906376838684,
+      "final_code_length": 158
+    },
+    {
+      "task_id": "HumanEval/46",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.421441793441772,
+      "final_code_length": 642
+    },
+    {
+      "task_id": "HumanEval/47",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.316205263137817,
+      "final_code_length": 316
+    },
+    {
+      "task_id": "HumanEval/48",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.546147346496582,
+      "final_code_length": 279
+    },
+    {
+      "task_id": "HumanEval/49",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.642350196838379,
+      "final_code_length": 361
+    },
+    {
+      "task_id": "HumanEval/50",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 3.3635220527648926,
+      "final_code_length": 412
+    },
+    {
+      "task_id": "HumanEval/51",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 4.678227663040161,
+      "final_code_length": 509
+    },
+    {
+      "task_id": "HumanEval/52",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.4833984375,
+      "final_code_length": 298
+    },
+    {
+      "task_id": "HumanEval/53",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.400043725967407,
+      "final_code_length": 136
+    },
+    {
+      "task_id": "HumanEval/54",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.546250104904175,
+      "final_code_length": 557
+    },
+    {
+      "task_id": "HumanEval/55",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.38674521446228,
+      "final_code_length": 239
+    },
+    {
+      "task_id": "HumanEval/56",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 6.388442039489746,
+      "final_code_length": 620
+    },
+    {
+      "task_id": "HumanEval/57",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 4.899949789047241,
+      "final_code_length": 404
+    },
+    {
+      "task_id": "HumanEval/58",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.52218222618103,
+      "final_code_length": 462
+    },
+    {
+      "task_id": "HumanEval/59",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 8.852837324142456,
+      "final_code_length": 1097
+    },
+    {
+      "task_id": "HumanEval/60",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.441156148910522,
+      "final_code_length": 1032
+    },
+    {
+      "task_id": "HumanEval/61",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 7.947329044342041,
+      "final_code_length": 1221
+    },
+    {
+      "task_id": "HumanEval/62",
+      "status": "passed",
+      "quality_score": 90,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 4.3630571365356445,
+      "final_code_length": 451
+    },
+    {
+      "task_id": "HumanEval/63",
+      "status": "passed",
+      "quality_score": 85,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.448872566223145,
+      "final_code_length": 97
+    },
+    {
+      "task_id": "HumanEval/64",
+      "status": "repaired",
+      "quality_score": 95,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 7.939439535140991,
+      "final_code_length": 514
+    },
+    {
+      "task_id": "HumanEval/65",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.396073818206787,
+      "final_code_length": 724
+    },
+    {
+      "task_id": "HumanEval/66",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 4.099923372268677,
+      "final_code_length": 442
+    },
+    {
+      "task_id": "HumanEval/67",
+      "status": "passed",
+      "quality_score": 90,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.487516641616821,
+      "final_code_length": 1216
+    },
+    {
+      "task_id": "HumanEval/68",
+      "status": "passed",
+      "quality_score": 90,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 9.470854043960571,
+      "final_code_length": 1343
+    },
+    {
+      "task_id": "HumanEval/69",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 6.99170708656311,
+      "final_code_length": 864
+    },
+    {
+      "task_id": "HumanEval/70",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 6.758176803588867,
+      "final_code_length": 841
+    },
+    {
+      "task_id": "HumanEval/71",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.382364273071289,
+      "final_code_length": 538
+    },
+    {
+      "task_id": "HumanEval/72",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 4.073342800140381,
+      "final_code_length": 439
+    },
+    {
+      "task_id": "HumanEval/73",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.4823477268219,
+      "final_code_length": 1063
+    },
+    {
+      "task_id": "HumanEval/74",
+      "status": "passed",
+      "quality_score": 85,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.520658731460571,
+      "final_code_length": 160
+    },
+    {
+      "task_id": "HumanEval/75",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 4.426125764846802,
+      "final_code_length": 380
+    },
+    {
+      "task_id": "HumanEval/76",
+      "status": "repaired",
+      "quality_score": 65,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.476893663406372,
+      "final_code_length": 136
+    },
+    {
+      "task_id": "HumanEval/77",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.289494514465332,
+      "final_code_length": 387
+    },
+    {
+      "task_id": "HumanEval/78",
+      "status": "passed",
+      "quality_score": 85,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 1.6613001823425293,
+      "final_code_length": 157
+    },
+    {
+      "task_id": "HumanEval/79",
+      "status": "repaired",
+      "quality_score": 80,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.54314923286438,
+      "final_code_length": 514
+    },
+    {
+      "task_id": "HumanEval/80",
+      "status": "passed",
+      "quality_score": 85,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.620293617248535,
+      "final_code_length": 172
+    },
+    {
+      "task_id": "HumanEval/81",
+      "status": "repaired",
+      "quality_score": 60,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.59376311302185,
+      "final_code_length": 1587
+    },
+    {
+      "task_id": "HumanEval/82",
+      "status": "passed",
+      "quality_score": 85,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 2.631775379180908,
+      "final_code_length": 346
+    },
+    {
+      "task_id": "HumanEval/83",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.51908540725708,
+      "final_code_length": 942
+    },
+    {
+      "task_id": "HumanEval/84",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.489481925964355,
+      "final_code_length": 816
+    },
+    {
+      "task_id": "HumanEval/85",
+      "status": "passed",
+      "quality_score": 85,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 1.925516128540039,
+      "final_code_length": 158
+    },
+    {
+      "task_id": "HumanEval/86",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 5.167139530181885,
+      "final_code_length": 750
+    },
+    {
+      "task_id": "HumanEval/87",
+      "status": "repaired",
+      "quality_score": 80,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 6.917961597442627,
+      "final_code_length": 514
+    },
+    {
+      "task_id": "HumanEval/88",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 8.80542516708374,
+      "final_code_length": 1147
+    },
+    {
+      "task_id": "HumanEval/89",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.334599256515503,
+      "final_code_length": 634
+    },
+    {
+      "task_id": "HumanEval/90",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 5.232335329055786,
+      "final_code_length": 672
+    },
+    {
+      "task_id": "HumanEval/91",
+      "status": "repaired",
+      "quality_score": 75,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.404193878173828,
+      "final_code_length": 1609
+    },
+    {
+      "task_id": "HumanEval/92",
+      "status": "passed",
+      "quality_score": 90,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 11.489563226699829,
+      "final_code_length": 273
+    },
+    {
+      "task_id": "HumanEval/93",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 6.43630576133728,
+      "final_code_length": 956
+    },
+    {
+      "task_id": "HumanEval/94",
+      "status": "repaired",
+      "quality_score": 70,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 3.2392923831939697,
+      "final_code_length": 226
+    },
+    {
+      "task_id": "HumanEval/95",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 7.166930913925171,
+      "final_code_length": 1010
+    },
+    {
+      "task_id": "HumanEval/96",
+      "status": "passed",
+      "quality_score": 95,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 6.118947744369507,
+      "final_code_length": 652
+    },
+    {
+      "task_id": "HumanEval/97",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 7.586046934127808,
+      "final_code_length": 747
+    },
+    {
+      "task_id": "HumanEval/98",
+      "status": "repaired",
+      "quality_score": 65,
+      "test_passed": false,
+      "rag_used": true,
+      "generation_time": 11.363673686981201,
+      "final_code_length": 838
+    },
+    {
+      "task_id": "HumanEval/99",
+      "status": "passed",
+      "quality_score": 100,
+      "test_passed": true,
+      "rag_used": true,
+      "generation_time": 7.2057976722717285,
+      "final_code_length": 1061
+    }
+  ]
+}

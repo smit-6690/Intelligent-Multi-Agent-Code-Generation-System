@@ -1,0 +1,303 @@
+{
+  "timestamp": "2025-11-02T21:58:43.828772",
+  "evaluation_report": {
+    "timestamp": "2025-11-02T21:58:43.824189",
+    "total_samples": 100,
+    "strategy_comparisons": {
+      "chain_of_thought": {
+        "llama": {
+          "success_rate": 100.0,
+          "avg_generation_time": 0.27436553478240966,
+          "avg_output_tokens": 11.73,
+          "avg_output_length": 37.72,
+          "avg_quality_score": 77.176696652174,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "mistral": {
+          "success_rate": 100.0,
+          "avg_generation_time": 1.3939071440696715,
+          "avg_output_tokens": 67.51,
+          "avg_output_length": 232.66,
+          "avg_quality_score": 87.60475223163763,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "qwen": {
+          "success_rate": 100.0,
+          "avg_generation_time": 150.04858070611954,
+          "avg_output_tokens": 111.79,
+          "avg_output_length": 502.14,
+          "avg_quality_score": 71.833984375,
+          "total_successes": 100,
+          "total_attempts": 100
+        }
+      },
+      "self_consistency": {
+        "llama": {
+          "success_rate": 100.0,
+          "avg_generation_time": 0.36485579252243044,
+          "avg_output_tokens": 16.39,
+          "avg_output_length": 58.96,
+          "avg_quality_score": 78.04914862811566,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "mistral": {
+          "success_rate": 100.0,
+          "avg_generation_time": 0.7874740433692932,
+          "avg_output_tokens": 36.7,
+          "avg_output_length": 123.66,
+          "avg_quality_score": 81.8398545652628,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "qwen": {
+          "success_rate": 100.0,
+          "avg_generation_time": 157.10622970819475,
+          "avg_output_tokens": 117.31,
+          "avg_output_length": 503.49,
+          "avg_quality_score": 72.912109375,
+          "total_successes": 100,
+          "total_attempts": 100
+        }
+      },
+      "tree_of_thoughts": {
+        "llama": {
+          "success_rate": 100.0,
+          "avg_generation_time": 1.2152827453613282,
+          "avg_output_tokens": 59.73,
+          "avg_output_length": 205.12,
+          "avg_quality_score": 86.15964781443279,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "mistral": {
+          "success_rate": 100.0,
+          "avg_generation_time": 1.3820432567596435,
+          "avg_output_tokens": 66.43,
+          "avg_output_length": 229.92,
+          "avg_quality_score": 87.39875801801682,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "qwen": {
+          "success_rate": 100.0,
+          "avg_generation_time": 137.56656827926636,
+          "avg_output_tokens": 102.84,
+          "avg_output_length": 490.42,
+          "avg_quality_score": 70.0859375,
+          "total_successes": 100,
+          "total_attempts": 100
+        }
+      },
+      "react": {
+        "llama": {
+          "success_rate": 100.0,
+          "avg_generation_time": 0.7377334570884705,
+          "avg_output_tokens": 34.98,
+          "avg_output_length": 122.44,
+          "avg_quality_score": 81.52464230954646,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "mistral": {
+          "success_rate": 100.0,
+          "avg_generation_time": 0.772323637008667,
+          "avg_output_tokens": 36.41,
+          "avg_output_length": 134.03,
+          "avg_quality_score": 81.78952660957972,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "qwen": {
+          "success_rate": 100.0,
+          "avg_generation_time": 125.40288238048554,
+          "avg_output_tokens": 93.74,
+          "avg_output_length": 471.11,
+          "avg_quality_score": 68.30859375,
+          "total_successes": 100,
+          "total_attempts": 100
+        }
+      },
+      "reflexion": {
+        "llama": {
+          "success_rate": 100.0,
+          "avg_generation_time": 2.2067256236076354,
+          "avg_output_tokens": 111.18,
+          "avg_output_length": 432.8,
+          "avg_quality_score": 95.79537474016348,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "mistral": {
+          "success_rate": 100.0,
+          "avg_generation_time": 2.0662677097320556,
+          "avg_output_tokens": 101.54,
+          "avg_output_length": 403.77,
+          "avg_quality_score": 93.97108637094497,
+          "total_successes": 100,
+          "total_attempts": 100
+        },
+        "qwen": {
+          "success_rate": 100.0,
+          "avg_generation_time": 161.8244432449341,
+          "avg_output_tokens": 120.75,
+          "avg_output_length": 580.61,
+          "avg_quality_score": 73.583984375,
+          "total_successes": 100,
+          "total_attempts": 100
+        }
+      }
+    },
+    "model_rankings": {
+      "llama": {
+        "avg_quality_across_strategies": 83.74110202888647,
+        "avg_generation_time": 0.9597926306724548,
+        "avg_success_rate": 100.0
+      },
+      "mistral": {
+        "avg_quality_across_strategies": 86.52079555908838,
+        "avg_generation_time": 1.280403158187866,
+        "avg_success_rate": 100.0
+      },
+      "qwen": {
+        "avg_quality_across_strategies": 71.344921875,
+        "avg_generation_time": 146.38974086380006,
+        "avg_success_rate": 100.0
+      }
+    },
+    "model_rankings_sorted": {
+      "mistral": {
+        "avg_quality_across_strategies": 86.52079555908838,
+        "avg_generation_time": 1.280403158187866,
+        "avg_success_rate": 100.0
+      },
+      "llama": {
+        "avg_quality_across_strategies": 83.74110202888647,
+        "avg_generation_time": 0.9597926306724548,
+        "avg_success_rate": 100.0
+      },
+      "qwen": {
+        "avg_quality_across_strategies": 71.344921875,
+        "avg_generation_time": 146.38974086380006,
+        "avg_success_rate": 100.0
+      }
+    }
+  },
+  "strategy_analysis": {
+    "chain_of_thought": {
+      "avg_quality": 78.87181108627054,
+      "quality_std_dev": 8.020868993164052,
+      "max_quality": 87.60475223163763,
+      "min_quality": 71.833984375,
+      "model_count": 3
+    },
+    "self_consistency": {
+      "avg_quality": 77.60037085612615,
+      "quality_std_dev": 4.480759942469472,
+      "max_quality": 81.8398545652628,
+      "min_quality": 72.912109375,
+      "model_count": 3
+    },
+    "tree_of_thoughts": {
+      "avg_quality": 81.21478111081653,
+      "quality_std_dev": 9.657754325393949,
+      "max_quality": 87.39875801801682,
+      "min_quality": 70.0859375,
+      "model_count": 3
+    },
+    "react": {
+      "avg_quality": 77.2075875563754,
+      "quality_std_dev": 7.707892643098487,
+      "max_quality": 81.78952660957972,
+      "min_quality": 68.30859375,
+      "model_count": 3
+    },
+    "reflexion": {
+      "avg_quality": 87.78348182870282,
+      "quality_std_dev": 12.330908440451624,
+      "max_quality": 95.79537474016348,
+      "min_quality": 73.583984375,
+      "model_count": 3
+    }
+  },
+  "insights": {
+    "best_model": "mistral",
+    "best_strategy": "reflexion",
+    "fastest_model": "llama",
+    "most_reliable_model": "llama",
+    "top_10_combinations": [
+      {
+        "model": "llama",
+        "strategy": "reflexion",
+        "quality": 95.79537474016348,
+        "success_rate": 100.0,
+        "avg_time": 2.2067256236076354
+      },
+      {
+        "model": "mistral",
+        "strategy": "reflexion",
+        "quality": 93.97108637094497,
+        "success_rate": 100.0,
+        "avg_time": 2.0662677097320556
+      },
+      {
+        "model": "mistral",
+        "strategy": "chain_of_thought",
+        "quality": 87.60475223163763,
+        "success_rate": 100.0,
+        "avg_time": 1.3939071440696715
+      },
+      {
+        "model": "mistral",
+        "strategy": "tree_of_thoughts",
+        "quality": 87.39875801801682,
+        "success_rate": 100.0,
+        "avg_time": 1.3820432567596435
+      },
+      {
+        "model": "llama",
+        "strategy": "tree_of_thoughts",
+        "quality": 86.15964781443279,
+        "success_rate": 100.0,
+        "avg_time": 1.2152827453613282
+      },
+      {
+        "model": "mistral",
+        "strategy": "self_consistency",
+        "quality": 81.8398545652628,
+        "success_rate": 100.0,
+        "avg_time": 0.7874740433692932
+      },
+      {
+        "model": "mistral",
+        "strategy": "react",
+        "quality": 81.78952660957972,
+        "success_rate": 100.0,
+        "avg_time": 0.772323637008667
+      },
+      {
+        "model": "llama",
+        "strategy": "react",
+        "quality": 81.52464230954646,
+        "success_rate": 100.0,
+        "avg_time": 0.7377334570884705
+      },
+      {
+        "model": "llama",
+        "strategy": "self_consistency",
+        "quality": 78.04914862811566,
+        "success_rate": 100.0,
+        "avg_time": 0.36485579252243044
+      },
+      {
+        "model": "llama",
+        "strategy": "chain_of_thought",
+        "quality": 77.176696652174,
+        "success_rate": 100.0,
+        "avg_time": 0.27436553478240966
+      }
+    ]
+  }
+}
